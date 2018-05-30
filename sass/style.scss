@@ -17,11 +17,13 @@ $font-stack: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica
 html{
   background-color: #fafafa;
 }
+
 body{
-  background-color: none;
   font-family: $font-stack;
+  letter-spacing: 0.5px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  color: #333;
 }
 
 .clear{
@@ -31,12 +33,13 @@ body{
 a {
   text-decoration: none;
   color: #226899;
-
+  -webkit-transition: .2s ease all;
+  -moz-transition: .2s ease all;
+  transition: .2s ease all;
   &:hover {
     text-decoration: none;
     color: #cccccc;
   }
-
   &:visited {
     color: #226899;
   }
@@ -47,6 +50,7 @@ a {
   right: 100px;
   font-weight: 700;
   margin-top: 45px;
+  width:100%;
   position: absolute;
   padding-left: 30px;
   padding-right: 15px;
@@ -55,7 +59,6 @@ a {
     padding-left: 15px;
     padding-right: 15px;
   }
-
   @include respond-to-specific(769px){
     right: 10px;
     position: fixed;
@@ -112,7 +115,6 @@ a {
     }
   }
 
-
   ul {
     @include respond-to-specific(769px){
       margin-top: 20px;
@@ -139,45 +141,27 @@ a {
   }
 }
 
-
 #page{
   padding-top: 100px;
   display: block;
-  font-size: 18px;
-  @include respond-to-specific(769px){
-    font-size: 14px;
-  }
-  h1{
-    font-size: 3em;
-  }
+  font-size: 15px;
 
   .container-block{
-    padding: 30px;
-    width: 1000px;
+    padding: 24px;
+    width: 80%;
+    max-width: 850px;
     background-color: #ffffff;
-    margin: 0 auto;
-    @include respond-to-specific(1144px){
-      width: 80%;
-    }
-    h1{
-      font-size: 3em;
+    margin: 0 auto 2em;
+    h1 {
+      font-size: 1.8em;
       font-weight: 700;
       margin-bottom: 15px;
     }
-    p{
-      line-height: 1.6;
+    p {
+      line-height: 1.5;
       font-size: 1em;
-      @include respond-to-specific(769px){
-        font-size: 1em;
-      }
-    }
-
-    margin-bottom: 100px;
-    @include respond-to-specific(450px){
-      margin-bottom: 30px;
     }
   }
-  
   #intro-sect-container{
     position: fixed;
     z-index: -1;
@@ -245,52 +229,53 @@ a {
     @include bottom-shadow();    
     .publication{
       h2 {
-        font-size: 1.2em;
+        font-size: 1.3em;
         line-height: 1.5;
       } 
       .authors{
         line-height: 2;
         font-style: italic;
-        font-size: 0.8em;
+        font-size: 1em;
+      }
+      .links {
+          line-height: 2;
       }
       .desc {
-        line-height: 1.5;
-        font-size: 0.8em;
+
       }
     } 
   }
   #team-sect{
     margin-top: 400px;
     #team-pics{
-      padding-top: 50px;
+      padding: 1em 0;
+      .emails {
+        margin: 1em 0 0;
+        display: block;
+      }
     }
     @include bottom-shadow();
     .team-wrapper{
       text-align: center;
-      width: 90%;
       margin: 0 auto;
       .team-member{
         width: 18%;
         padding: 1%;
         float: left;
-        height: 250px;
+        height: 180px;
         @include respond-to-specific(450px){
           float: none;
           margin: 0 auto;
-
         }
         @include respond-to-specific(769px){
           width: 150px;
         }
-
         .member-image{
           img{
             width: 100%;
             border-radius: 50%;
           }
         }
-
-
         .member-name{
           text-align: center;
           font-weight: 700; 
@@ -330,8 +315,7 @@ a {
       font-weight: 700;
       margin: 20px auto;
     }
-    
-    width: 350px;
+
     #mc_embed_signup{
       text-align: center;
     }
@@ -379,5 +363,4 @@ a {
       margin-bottom: 15px;
     }
   }
-  
 }

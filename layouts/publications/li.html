@@ -1,11 +1,13 @@
 <div class="publication">
-  <a rel="noopener noreferrer" href="{{.Params.link}}">
-    <h2>{{.Params.Title}}</h2>
-  </a>
+  <h2>{{.Params.Title}}</h2>
   <div class="authors">
-    {{.Params.Authors}}
+    <p>{{.Params.Authors}}</p>
+  </div>
+  <div class="links">
+    <a href="{{.Params.arxiv}}" target="_blank">arXiv</a> | <a href="{{.Params.github}}" target="_blank">GitHub</a> | <a href="{{.Params.iclr}}" target="_blank">ICLR</a>
   </div>
   <div class="desc">
-    {{.Params.Abstract}}
+    <p>{{.Params.Abstract}}</p>
   </div>
+
 </div>
